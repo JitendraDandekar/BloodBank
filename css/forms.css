@@ -1,0 +1,20 @@
+
+.container{
+    padding-top: 10px;
+    padding-bottom: 60px;
+    margin-bottom: 10px;
+    background-color: lightpink;
+    border-radius: 5px;
+}
+
+.col-lg-10 .row{
+    padding: 10px;
+}
+
+.col-lg-10 .row .col-sm-2{
+    font-weight: bold;
+}
+
+.col-lg-10 .row .col{
+    font-style: italic;
+}
