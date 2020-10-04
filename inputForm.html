@@ -140,6 +140,7 @@
                     <th scope="col">D.O.B</th>
                     <th scope="col">Age</th>
                     <th scope="col">Blood Group</th>
+                    <th scope="col"></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -151,37 +152,17 @@
                     <td><input type="date"></td>
                     <td ><input type="text" style="width: 50%;"></td>
                     <td><input type="text" style="width: 50%;"></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td><input type="text"></td>
-                    <td><input type="text"></td>
-                    <td><input type="text"></td>
-                    <td><input type="date"></td>
-                    <td><input type="text" style="width: 50%;"></td>
-                    <td><input type="text" style="width: 50%;"></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td><input type="text"></td>
-                    <td><input type="text"></td>
-                    <td><input type="text"></td>
-                    <td><input type="date"></td>
-                    <td><input type="text" style="width: 50%;"></td>
-                    <td><input type="text" style="width: 50%;"></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">4</th>
-                    <td><input type="text"></td>
-                    <td><input type="text"></td>
-                    <td><input type="text"></td>
-                    <td><input type="date"></td>
-                    <td><input type="text" style="width: 50%;"></td>
-                    <td><input type="text" style="width: 50%;"></td>
+                    <td><abbr title="Delete" class="del-abbr"><span class="del">&#215;</span></abbr></td>
                   </tr>
                 </tbody>
+                <tfoot>
+                  <td colspan="8">
+                    <button class="add-row btn btn-light" type="button" style="float: right;">Add</button>
+                  </td>
+                </tfoot>
               </table>
                 <button class="btn btn-primary" type="submit" style="float: right; padding-left: 30px; padding-right: 30px">Save</button>
+                <button type="reset" class="btn btn-primary" style="float: right; margin-right:10px; padding-left: 30px; padding-right: 30px">Reset</button>
               </div>
               </form>
         </div>   
@@ -219,5 +200,18 @@
         var image = document.getElementById("profile-pic");
         image.src = URL.createObjectURL(event.target.files[0])
     };
+    lineNo = 2
+    $(document).ready(function(){
+      $(".add-row").click(function(){
+        line = '<tr><th scope="row">'+lineNo+'</th><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="date"></td><td ><input type="text" style="width: 50%;"></td><td><input type="text" style="width: 50%;"></td><td><abbr title="Delete" class="del-abbr"><span class="del">&#215;</span></abbr></td></tr>';
+        tablebody=$("table tbody");
+        tablebody.append(line);
+        lineNo++;
+      });
+      $("table").on("click", ".del", function() {
+        $(this).closest("tr").remove();
+        lineNo--;
+     });
+    });
 </script>
 </html>

@@ -18,3 +18,12 @@
 .col-lg-10 .row .col{
     font-style: italic;
 }
+
+.del{
+    cursor: pointer;
+    font-weight: 1000;
+}
+
+.del-abbr[title]{
+    text-decoration: none;
+}
